@@ -15,7 +15,7 @@ export default function Notes({ note,setNotes }) {
 
   return (
     <div className="d-flex flex-wrap ">
-      {note.map((val, i) => {
+      {note && note.map((val, i) => {
         return (
           <div key={i} className="note-item card m-3 p-3">
             <p>{val.value}</p>
