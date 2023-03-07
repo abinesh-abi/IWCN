@@ -29,10 +29,15 @@ let initialData = [
 function Table() {
   const [data, setData] = React.useState(initialData);
   function submit(){
-    let body= JSON.stringify(data)
-    fetch('http://127.0.0.1:8080',{method:'POST',body})
-    .then(data=>alert('Submited'))
-    .catch(err=>alert('there is an error'))
+    let body= JSON.stringify(data,null,1)
+    // fetch('http://127.0.0.1:8080',{method:'POST',body})
+    // .then(data=>alert('Submited'))
+    // .catch(err=>alert('there is an error'))
+
+    alert('this is the final data \n'+body)
+
+
+
   }
   return (
     <div>

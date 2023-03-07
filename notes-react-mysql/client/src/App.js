@@ -4,11 +4,12 @@ import Notes from "./componets/Notes";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from 'axios'
+import config from "./config";
 
 function App() {
   const [notes, setNotes] = useState([])
   useEffect(()=>{
-    axios.get('http://localhost:8000/notes')
+    axios.get(`${config.SERVER_URL}/notes`)
     .then(({data})=>setNotes(data.data))
   },[])
   return (

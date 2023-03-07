@@ -1,14 +1,15 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import config from '../config'
 
 export default function Input({setNotes}) {
   const [value, setValue] = useState('')
   function createNote(e){
     e.preventDefault()
-    axios.post('http://localhost:8000/note',{value})
+    axios.post(`${config.SERVER_URL}/note`,{value})
     .then(({data})=>{
       setNotes(state=>{
-      return [...state,{value,date_created:Date.now().toLocaleString()}]
+      return [...state,{value,date_created:Date.now()}]
     })
     setValue('')
   })
