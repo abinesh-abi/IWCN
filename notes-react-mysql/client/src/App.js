@@ -10,7 +10,9 @@ function App() {
   const [notes, setNotes] = useState([])
   useEffect(()=>{
     axios.get(`${config.SERVER_URL}/notes`)
-    .then(({data})=>setNotes(data.data))
+    .then(({data})=>{
+      setNotes(data.data)
+    })
   },[])
   return (
     <div className="App">
